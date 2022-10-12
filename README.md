@@ -1,5 +1,7 @@
 # Interview Scheduler
 
+Interview Scheduler is a single-page React app that allows users to book, edit, or delete interviews. It uses Storybook, Jest, and Cypress as testing platforms.
+
 ## Setup
 
 Install dependencies with `npm install`.
