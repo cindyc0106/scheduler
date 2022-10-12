@@ -52,6 +52,7 @@
     "graceful-fs": "4.2.4"
   },
   "jest": {
+    "resetMocks": false,
     "watchPathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/.git/"

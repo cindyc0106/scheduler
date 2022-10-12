@@ -22,6 +22,7 @@ export default function useApplicationData() {
       });
   }, []);
 
+
   //Book Interview Function
   function bookInterview(id, interview) {
     const appointment = {
