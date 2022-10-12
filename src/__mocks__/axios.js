@@ -56,6 +56,7 @@ const fixtures = {
 
 export default {
   defaults: { baseURL: "" },
+  //Mock GET
   get: jest.fn(url => {
     if (url === "/api/days") {
       return Promise.resolve({
@@ -83,7 +84,7 @@ export default {
       });
     }
   }),
-
+  //Mock PUT
   put: jest.fn(url => {
 
     return Promise.resolve({
@@ -92,7 +93,7 @@ export default {
     });
 
   }),
-
+  //Mock DELETE
   delete: jest.fn(url => {
 
     return Promise.resolve({

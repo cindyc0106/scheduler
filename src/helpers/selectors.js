@@ -1,3 +1,4 @@
+//Return appointments for particular day
 export function getAppointmentsForDay(state, day) {
 
   const result = [];
@@ -12,6 +13,7 @@ export function getAppointmentsForDay(state, day) {
   return result;
 }
 
+//Update interviewer info for existing interview
 export function getInterview(state, interview) {
 
   if (!interview) {
@@ -23,6 +25,7 @@ export function getInterview(state, interview) {
 
 }
 
+//Return interviewers for particular day
 export function getInterviewersForDay(state, day) {
 
   const result = [];

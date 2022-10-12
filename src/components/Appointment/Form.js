@@ -18,7 +18,7 @@ export default function Form(props) {
     props.onCancel();
   };
 
-  //validating function
+  //Validating function: empty student name field/no interviewer selected
   function validate() {
     if (student === "") {
       setError("Student name cannot be blank");
@@ -47,7 +47,7 @@ export default function Form(props) {
             data-testid="student-name-input"
           />
         </form>
-        {/* error handling */}
+        {/* only shows when error handling */}
         <section className="appointment__validation">{error}</section>
         <InterviewerList
           interviewers={props.interviewers}

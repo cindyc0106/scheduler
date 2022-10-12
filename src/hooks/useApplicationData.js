@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
+
 export default function useApplicationData() {
 
   const [state, setState] = useState({
@@ -9,8 +10,10 @@ export default function useApplicationData() {
     appointments: {},
     interviewers: {}
   });
+
   const setDay = day => setState({ ...state, day });
 
+  //Getting data from API
   useEffect(() => {
     Promise.all([
       axios.get("/api/days"),
@@ -22,8 +25,7 @@ export default function useApplicationData() {
       });
   }, []);
 
-
-  //Book Interview Function
+  //Book Interview Function: add interview to appointments and PUT request
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -39,8 +41,10 @@ export default function useApplicationData() {
       .then(() => {
         //updating spots function
         const updateSpots = function(state, appointments) {
+
           let spots = 0;
           const dayObj = state.days.find(d => d.name === state.day);
+
           for (const id of dayObj.appointments) {
             const appointment = appointments[id];
             if (!appointment.interview) {
@@ -55,12 +59,11 @@ export default function useApplicationData() {
         const days = updateSpots(state, appointments);
 
         setState({ ...state, appointments, days });
-
       })
       .catch((error) => console.log(error.message));
   }
 
-  //Cancel Interview Function
+  //Cancel Interview Function: remove interview from appointments and DELETE request
   function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
@@ -75,8 +78,10 @@ export default function useApplicationData() {
       .then(() => {
         //updating spots function
         const updateSpots = function(state, appointments) {
+
           let spots = 0;
           const dayObj = state.days.find(d => d.name === state.day);
+
           for (const id of dayObj.appointments) {
             const appointment = appointments[id];
             if (!appointment.interview) {
@@ -92,9 +97,6 @@ export default function useApplicationData() {
         setState({ ...state, appointments, days });
       })
       .catch((error) => console.log(error.message));
-
   };
-
-
   return { state, setDay, bookInterview, cancelInterview };
 }
