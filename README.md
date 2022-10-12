@@ -4,22 +4,11 @@ Interview Scheduler is a single-page React app that allows users to book, edit, 
 
 ## Setup
 
-Install dependencies with `npm install`.
+1. Fork and clone the repository
+2. Fork and clone scheduler-api repository containing the database for the project and follow setup instructions. (https://github.com/cindyc0106/scheduler-api)
+3. Install dependencies with `npm install` in both folders
+4. Initiate Application and scheduler-api in separate terminals with `npm start`. 
+5. Interview Scheduler runs on (http://localhost:8000/)
+6. Jest tests can be run with `npm test` and Storybook with `npm run storybook`
 
-## Running Webpack Development Server
-
-```sh
-npm start
-```
-
-## Running Jest Test Framework
-
-```sh
-npm test
-```
-
-## Running Storybook Visual Testbed
-
-```sh
-npm run storybook
-```
+## Screenshots
