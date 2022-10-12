@@ -12,3 +12,6 @@ Interview Scheduler is a single-page React app that allows users to book, edit, 
 6. Jest tests can be run with `npm test` and Storybook with `npm run storybook`
 
 ## Screenshots
+!["Appointment Form"](https://github.com/cindyc0106/scheduler/blob/master/docs/appointment-form.png?raw=true)
+!["Delete appointment confirmation"](https://github.com/cindyc0106/scheduler/blob/master/docs/cancel-confirmation.png?raw=true)
+!["Saved interview view"](https://github.com/cindyc0106/scheduler/blob/master/docs/saved-interview.png?raw=true)
