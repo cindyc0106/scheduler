@@ -19,9 +19,9 @@ import Error from "components/Appointment/Error.js";
 import Form from "components/Appointment/Form.js";
 
 storiesOf("Button", module)
-  .addParameters({
-    backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
-  })
+  // .addParameters({
+  //   backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
+  // })
   .add("Base", () => <Button>Base</Button>)
   .add("Confirm", () => <Button confirm>Confirm</Button>)
   .add("Danger", () => <Button danger>Cancel</Button>)

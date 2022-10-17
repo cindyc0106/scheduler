@@ -10,7 +10,7 @@ import useVisualMode from 'hooks/useVisualMode';
 import "./styles.scss";
 
 export default function Appointment(props) {
-
+console.log(props)
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
@@ -34,7 +34,10 @@ export default function Appointment(props) {
 
     props.bookInterview(props.id, interview)
       .then(() => transition(SHOW))
-      .catch(() => transition(ERROR_SAVE, true));
+      .catch((error) => {
+        transition(ERROR_SAVE, true)
+        console.log(error.message)
+      });
   };
 
   //Delete function: calling cancelInterview function
@@ -44,7 +47,10 @@ export default function Appointment(props) {
 
     props.cancelInterview(props.id)
       .then(() => transition(EMPTY))
-      .catch(() => transition(ERROR_DELETE, true));
+      .catch((error) => {
+        transition(ERROR_DELETE, true)
+        console.log(error.message)
+      });
   };
 
   return (

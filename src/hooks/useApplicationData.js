@@ -60,7 +60,7 @@ export default function useApplicationData() {
 
         setState({ ...state, appointments, days });
       })
-      .catch((error) => console.log(error.message));
+
   }
 
   //Cancel Interview Function: remove interview from appointments and DELETE request
@@ -96,7 +96,7 @@ export default function useApplicationData() {
         const days = updateSpots(state, appointments);
         setState({ ...state, appointments, days });
       })
-      .catch((error) => console.log(error.message));
+    
   };
   return { state, setDay, bookInterview, cancelInterview };
 }
